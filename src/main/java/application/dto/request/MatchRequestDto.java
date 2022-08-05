@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @NoArgsConstructor
-public class MatchRequestDto { // Representa a partida ( um conjunto de players) passados no postman.
+public class MatchRequestDto { // Representa a partida ( um conjunto de players) passados no postman (Request).
 
     @Valid
     private List<PlayerRequestDto> players = new ArrayList<>();

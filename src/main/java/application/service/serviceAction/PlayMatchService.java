@@ -1,4 +1,4 @@
-package application.service.ServiceAction;
+package application.service.serviceAction;
 
 import application.builder.MatchBuilder;
 import application.dto.request.MatchRequestDto;
@@ -44,7 +44,7 @@ public class PlayMatchService {
 
         assembleTeams(teamA, teamB, players, halfPlayers, drawGoalKeeper); // Método para montar o time.
 
-        new MatchBuilder().                   // Cadeamento de Metódos -> Usado para setar dados nos atributtos da classe Match, de uma forma mais amigável, e legivel.
+        new MatchBuilder().                   // Cadeamento de Metódos -> Usado para setar dados nos atributtos da classe Match, de uma forma mais amigável e legivel.
                 setNumberPlayers(totalPlayers).
                 setTeamA(teamA).
                 setTeamB(teamB).
@@ -66,18 +66,18 @@ public class PlayMatchService {
         return players;
     }
 
-    private void assembleTeams(Team teamA, Team teamB, List<Player> players, int half, String drawGoalkeeper) { // Pega a lista de players, os 2 times, a metade da quantidade de jogadores e o parametro dramGoalKeep.er.
+    private void assembleTeams(Team teamA, Team teamB, List<Player> players, int half, String drawGoalkeeper) { // Pega a lista de players, os 2 times, a metade da quantidade de jogadores e o parametro dramGoalKeeper.
         // A lista de players, a metade dos alunos dessa lista, vão para o time A e a outra metade para o B.
-        // O parametro do drawGoalkepper é para saber se o goleira vai ser sortiado.
+        // O parametro do drawGoalkepper é para saber se o goleira vai ser sorteado.
         for (int i = 0; i < players.size(); i++) {
             Player player = players.get(i);
             if (i < half) {
-                setTeam(teamA, player);              // Da linha 69 até a 76 é a logica para passar os jogadores para os 2 times.
+                setTeam(teamA, player);              // Da linha 72 até a 78 é a logica para passar os jogadores para os 2 times.
             } else {
                 setTeam(teamB, player);
             }
         }
-        if (drawGoalkeeper != null && !drawGoalkeeper.equalsIgnoreCase("NO")) {                  // Se o drawGoalkeeper ( parametro request) for nulo, não vai entrar nessa condição, caso contrário,vai!
+        if (drawGoalkeeper != null && !drawGoalkeeper.equalsIgnoreCase("NO")) {   // Vai entrar na condição se o parametro for diferente de não e nulo.
             validationsDrawGoalkeeper.forEach(v -> v.validation(drawGoalkeeper));  // Aqui verifica se o parametro é yes ou se é outra coisa, se for outra coisa, vai dar erro.
             drawGoalkeeper(teamA); // Chamada o método de sortear um goleiro para o time A
             drawGoalkeeper(teamB); // E para o time B.

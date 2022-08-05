@@ -5,7 +5,7 @@ import application.entity.Team;
 import lombok.Getter;
 
 @Getter
-public class MatchBuilder { // Constroe um Match de uma maneira mais agradável e legivel.
+public class MatchBuilder { // Seta os atributos em um Match de uma maneira mais agradável e legivel.
 
     private Integer numberPlayers;
 

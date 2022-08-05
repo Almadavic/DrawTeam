@@ -14,7 +14,7 @@ public class ResourceExceptionHandler {  // Se ocorrer alguma das execções aba
     // de uma forma mais agradavél pro cliente.
 
     @ExceptionHandler(InvalidParamException.class)
-    // Caso algum parametro esteja inválido (diferente de = yes && !null).
+    // Caso algum parametro esteja inválido ( !yes && !null && !no).
     public ResponseEntity<StandardError> invalidParam(InvalidParamException e, HttpServletRequest request) {
         String error = "Invalid param";
         HttpStatus status = HttpStatus.NOT_ACCEPTABLE;

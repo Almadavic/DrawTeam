@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PlayerRequestDto { // Representa o nome do player que será passado no postman.
+public class PlayerRequestDto { // Representa o nome do player que será passado no postman (Request).
 
     @NotBlank
     private String name;

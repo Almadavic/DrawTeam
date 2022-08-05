@@ -5,7 +5,7 @@ import application.dto.request.PlayerRequestDto;
 import application.dto.response.MatchResponseDto;
 import application.dto.response.TeamResponseDto;
 import application.enumerated.Position;
-import application.service.ServiceAction.PlayMatchService;
+import application.service.serviceAction.PlayMatchService;
 import application.service.exception.InvalidParamException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ class PlayMatchServiceTest {
 
 
     @Test
-    void quantityPlayersAndNoDrawGoalKeeper() {
+    void quantityPlayersAndNoDrawGoalKeeper() { // Método que testa a quantidade de jogadores distribuida e total, além de testar o metodo do service sem parametro.
 
         MatchResponseDto dto = instance(null);
 
@@ -39,7 +39,7 @@ class PlayMatchServiceTest {
     }
 
     @Test
-    void drawGoalKeeperParameterYes() {
+    void drawGoalKeeperParameterYes() { // Testando o service com o parametro yes
 
         MatchResponseDto dto = instance("yes");
 
@@ -50,7 +50,7 @@ class PlayMatchServiceTest {
     }
 
     @Test
-    void drawGoalKeeperParameterNo() {
+    void drawGoalKeeperParameterNo() { // Testando o service com o parametro no
 
         MatchResponseDto dto = instance("no");
 
@@ -61,17 +61,17 @@ class PlayMatchServiceTest {
     }
 
     @Test
-    void invalidParam() {
+    void invalidParam() { // Testando o service com um parametro inválido
 
         Assertions.assertThrows(InvalidParamException.class, () -> instance("yesp"));
 
     }
 
-    private boolean thereIsGoalKeeper(TeamResponseDto team, Position position) {
+    private boolean thereIsGoalKeeper(TeamResponseDto team, Position position) {  // Método que retorna um boolean se tal posição foi encontrada em um jogador da lista.
         return team.getPlayers().stream().anyMatch(player -> player.getPosition().equals(position));
     }
 
-    private MatchResponseDto instance(String drawGoalKeeper) {
+    private MatchResponseDto instance(String drawGoalKeeper) { // Método que cria e retorna um MatchDto com os 2 times e jogadores populados.
 
         MatchRequestDto matchForm = new MatchRequestDto();
 

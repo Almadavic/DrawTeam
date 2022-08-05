@@ -10,7 +10,7 @@ import java.time.Instant;
 
 @Getter
 @Setter
-public class StandardError implements Serializable {         // Classe de formatação de exception ! Será retornado o erro de uma forma mais agradável pro cliente.
+public class StandardError implements Serializable {   // Classe de formatação de exception ! Será retornado o erro de uma forma mais agradável pro cliente.
 
     @Serial
     private static final long serialVersionUID = 1L;

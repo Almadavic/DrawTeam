@@ -8,7 +8,7 @@ import lombok.Getter;
 
 @Getter
 @JsonPropertyOrder(value = {"Letter", "Number Players Team", "Players"})
-public class PlayerResponseDto { // DTO da entidade Player
+public class PlayerResponseDto { // DTO da entidade Player (Response).
 
     @JsonProperty(value = "Name")
     private String name;
