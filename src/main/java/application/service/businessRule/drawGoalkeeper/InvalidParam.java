@@ -10,8 +10,8 @@ public class InvalidParam implements DrawGoalkeeperCheck { // Classe para verifi
 
     @Override
     public void validation(String param) {
-        if (!param.equalsIgnoreCase("yes")) {
-            throw new InvalidParamException("The parameter has to be equals ( yes or none ), it was :  " + param);
+        if (!param.equalsIgnoreCase("YES")) {
+            throw new InvalidParamException("If there is a parameter, this parameter has to be equals ( yes or no ), it was :  " + param);
         }
     }
 

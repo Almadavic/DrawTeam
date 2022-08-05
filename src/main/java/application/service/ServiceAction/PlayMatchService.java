@@ -77,7 +77,7 @@ public class PlayMatchService {
                 setTeam(teamB, player);
             }
         }
-        if (drawGoalkeeper != null) {                  // Se o drawGoalkeeper ( parametro request) for nulo, não vai entrar nessa condição, caso contrário,vai!
+        if (drawGoalkeeper != null && !drawGoalkeeper.equalsIgnoreCase("NO")) {                  // Se o drawGoalkeeper ( parametro request) for nulo, não vai entrar nessa condição, caso contrário,vai!
             validationsDrawGoalkeeper.forEach(v -> v.validation(drawGoalkeeper));  // Aqui verifica se o parametro é yes ou se é outra coisa, se for outra coisa, vai dar erro.
             drawGoalkeeper(teamA); // Chamada o método de sortear um goleiro para o time A
             drawGoalkeeper(teamB); // E para o time B.

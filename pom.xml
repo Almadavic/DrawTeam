@@ -62,7 +62,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>RandomTeam</finalName>
+		<finalName>DrawTeam</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
