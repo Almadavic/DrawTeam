@@ -24,5 +24,4 @@ public class Match { // Entidade principal, é a partida.
     @OneToOne(mappedBy = "match", cascade = CascadeType.ALL)
     private Team b;
 
-
 }

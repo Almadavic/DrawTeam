@@ -9,8 +9,9 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity // Tira as conf padrão do Spring Security.
 @Configuration
-public class SecurityConfig {
+public class SecurityConfig { // CONFIGS DO SECURITY!
 
+    // Método que cuida da autorização.
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
@@ -21,6 +22,7 @@ public class SecurityConfig {
         return http.build();
     }
 
+    // Método que cuida da liberação de acesso de recursos estáticos.
     @Bean
     WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**", "/h2-console/**");

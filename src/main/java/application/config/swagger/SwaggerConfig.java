@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class SwaggerConfig {
+public class SwaggerConfig { // Configurações do SWAGGER !
 
     @Bean
     public GroupedOpenApi publicApi() {
