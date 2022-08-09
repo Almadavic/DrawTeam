@@ -20,7 +20,7 @@ public class PlayMatchController {  // Controller onde inicia a partida.
     @PostMapping(value = "")
     @Operation(summary = "Faz o sorteio dos times.")
     public ResponseEntity<MatchResponseDto> run(@RequestBody @Valid MatchRequestDto matchForm,         // END-POINT onde acontece toda a lógica da API ( SORTEIO ).
-                                                @RequestParam(required = false) String drawGoalkeeper) {
+                                                @RequestParam(required = false, value = "drawgoalkeeper") String drawGoalkeeper) {
 
         MatchResponseDto matchDto = playMatchService.run(matchForm, drawGoalkeeper);
 

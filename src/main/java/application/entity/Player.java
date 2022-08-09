@@ -26,7 +26,6 @@ public class Player { // Classe que representa um jogador da partida.
     @ManyToOne()
     private Team team;
 
-
     public Player(String name, Position position) {
         this.name = name;
         this.position = position;

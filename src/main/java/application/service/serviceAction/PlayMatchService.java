@@ -37,8 +37,7 @@ public class PlayMatchService {
 
         Team teamA = new Team('A', halfPlayers, match); // Criando time A
 
-        Team teamB = new Team('B', halfPlayers, match); // Criando time B
-
+        Team teamB = new Team('B', (totalPlayers - halfPlayers), match); // Criando time B
 
         List<Player> players = convertFromPlayerFormListToPlayerList(matchForm); // Método para converter a lista.
 
@@ -66,12 +65,12 @@ public class PlayMatchService {
         return players;
     }
 
-    private void assembleTeams(Team teamA, Team teamB, List<Player> players, int half, String drawGoalkeeper) { // Pega a lista de players, os 2 times, a metade da quantidade de jogadores e o parametro dramGoalKeeper.
+    private void assembleTeams(Team teamA, Team teamB, List<Player> players, int halfPlayers, String drawGoalkeeper) { // Pega a lista de players, os 2 times, a metade da quantidade de jogadores e o parametro dramGoalKeeper.
         // A lista de players, a metade dos alunos dessa lista, vão para o time A e a outra metade para o B.
         // O parametro do drawGoalkepper é para saber se o goleira vai ser sorteado.
         for (int i = 0; i < players.size(); i++) {
             Player player = players.get(i);
-            if (i < half) {
+            if (i < halfPlayers) {
                 setTeam(teamA, player);              // Da linha 72 até a 78 é a logica para passar os jogadores para os 2 times.
             } else {
                 setTeam(teamB, player);

@@ -16,6 +16,7 @@ public class Match { // Entidade principal, é a partida.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Integer numberPlayers;
 
     @OneToOne(mappedBy = "match", cascade = CascadeType.ALL)
