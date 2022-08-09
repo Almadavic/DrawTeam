@@ -42,13 +42,13 @@ Spring Boot
  
  Validation -> Utilizado para proibir requisições com dados inválidos ou com um formato inválido.
  
- Web -> É uma aplicação WEB, Utilizado para receber requisições, devolver uma resposta ...
+ Web -> É uma aplicação WEB, Utilizado para receber requisições, devolver uma resposta, tomcat ...
  
- H2 - > Utilizado esse banco em MEMÓRIA para fazer testes, ambiente de teste.
+ H2 - > Utilizado esse banco em MEMÓRIA como default da aplicação
  
  Test -> Foram feitos testes na aplicação com JUNIT ( Testes do Service).
  
- Security -> Utilizado para fazer a segurança do sistema - > Não tem segurança configurada ainda para autenticacao e está tudo liberado, foi colocada essa dependencia para futuras possiveis alterações.
+ Security -> Utilizado para fazer a segurança do sistema - > Não tem segurança configurada ainda para autenticacao e está tudo liberado, foi colocada essa dependencia   para futuras possiveis alterações.
  
  SpringDoc -> Utilizado para documentar a API através dos ENDPOINTS.
  
@@ -69,7 +69,6 @@ Git e GitHub - Utilizados para commitar o projeto e subir o código para a nuvem
 -----BANCO DE DADOS-----
 
 H2 - Usado no ambiente DEFAULT.
-
 
 -----INFORMAÇÕES ADICIONAIS-----
 
