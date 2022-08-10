@@ -1,7 +1,7 @@
 package application.controller.resource;
 
-import application.dto.request.MatchRequestDto;
-import application.dto.response.MatchResponseDto;
+import application.dto.request.MatchRequestDTO;
+import application.dto.response.MatchResponseDTO;
 import application.service.serviceAction.PlayMatchService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +19,12 @@ public class PlayMatchController {  // Controller onde inicia a partida.
 
     @PostMapping(value = "")
     @Operation(summary = "Faz o sorteio dos times.")
-    public ResponseEntity<MatchResponseDto> run(@RequestBody @Valid MatchRequestDto matchForm,         // END-POINT onde acontece toda a lógica da API ( SORTEIO ).
+    public ResponseEntity<MatchResponseDTO> run(@RequestBody @Valid MatchRequestDTO matchForm,         // END-POINT onde acontece toda a lógica da API ( SORTEIO ).
                                                 @RequestParam(required = false, value = "drawgoalkeeper") String drawGoalkeeper) {
 
-        MatchResponseDto matchDto = playMatchService.run(matchForm, drawGoalkeeper);
+        MatchResponseDTO matchDTO = playMatchService.run(matchForm, drawGoalkeeper);
 
-        return ResponseEntity.ok().body(matchDto);
+        return ResponseEntity.ok().body(matchDTO);
     }
 
 }

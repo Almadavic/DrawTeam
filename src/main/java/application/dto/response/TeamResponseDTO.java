@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Getter
 @JsonPropertyOrder(value = {"Letter", "Number Players Team", "Players"})
-public class TeamResponseDto { // Dto da entidade Team (Response).
+public class TeamResponseDTO { // Dto da entidade Team (Response).
 
     @JsonProperty(value = "Letter")
     private Character letter;
@@ -20,16 +20,16 @@ public class TeamResponseDto { // Dto da entidade Team (Response).
     private int numberPlayers;
 
     @JsonProperty(value = "Players")
-    private List<PlayerResponseDto> players;
+    private List<PlayerResponseDTO> players;
 
-    public TeamResponseDto(Team team) {
+    public TeamResponseDTO(Team team) {
         this.letter = team.getLetter();
         this.numberPlayers = team.getNumberPlayers();
         this.players = convertTo(team.getPlayers());
     }
 
-    private List<PlayerResponseDto> convertTo(List<Player> players) {
-        return players.stream().map(PlayerResponseDto::new).collect(Collectors.toList());
+    private List<PlayerResponseDTO> convertTo(List<Player> players) {
+        return players.stream().map(PlayerResponseDTO::new).collect(Collectors.toList());
     }
 
 }

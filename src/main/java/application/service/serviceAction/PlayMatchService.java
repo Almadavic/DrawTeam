@@ -1,9 +1,9 @@
 package application.service.serviceAction;
 
 import application.builder.MatchBuilder;
-import application.dto.request.MatchRequestDto;
-import application.dto.request.PlayerRequestDto;
-import application.dto.response.MatchResponseDto;
+import application.dto.request.MatchRequestDTO;
+import application.dto.request.PlayerRequestDTO;
+import application.dto.response.MatchResponseDTO;
 import application.entity.Match;
 import application.entity.Player;
 import application.entity.Team;
@@ -27,7 +27,7 @@ public class PlayMatchService {
     @Autowired
     private List<DrawGoalkeeperCheck> validationsDrawGoalkeeper; // Interface para fazer as validações (regras de negócio)
 
-    public MatchResponseDto run(MatchRequestDto matchForm, String drawGoalKeeper) { // Metódo principal ( Cria a partida, os times, salva a partida...)
+    public MatchResponseDTO run(MatchRequestDTO matchForm, String drawGoalKeeper) { // Metódo principal ( Cria a partida, os times, salva a partida...)
 
         Match match = new Match(); // Cria uma partida
 
@@ -51,12 +51,12 @@ public class PlayMatchService {
 
         match = matchRepository.save(match); // Salva a partida (match) no banco.
 
-        return new MatchResponseDto(match); // Me retorna um DTO da partida (match).
+        return new MatchResponseDTO(match); // Me retorna um DTO da partida (match).
     }
 
-    private List<Player> convertFromPlayerFormListToPlayerList(MatchRequestDto matchForm) { // converte a lista do request (matchForm) de players e cria  uma lista da entidade Players
+    private List<Player> convertFromPlayerFormListToPlayerList(MatchRequestDTO matchForm) { // converte a lista do request (matchForm) de players e cria  uma lista da entidade Players
         List<Player> players = new ArrayList<>();                                    // Sorteia essa lista criada(posição dos players) e devolve essa lista sortiada.
-        for (PlayerRequestDto player : matchForm.getPlayers()) {
+        for (PlayerRequestDTO player : matchForm.getPlayers()) {
             String name = player.getName();
             Player newPlayer = new Player(name, Position.LINE);
             players.add(newPlayer);
